@@ -88,5 +88,7 @@ Future<void> updateProfileImage(String imagePath) async {
   current.profileImagePath = imagePath;
 
   await userBox.put(key, current);
-  currentUserNotifier.value = current;
+
+    currentUserNotifier.notifyListeners();
+ 
 }
